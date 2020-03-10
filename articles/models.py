@@ -12,4 +12,7 @@ class Article(models.Model):
         return self.title
 
     def snippet(self):
-        return self.body[:100] + '...'
+        if len(self.body) > 100:
+            return self.body[:100] + '...'
+        else:
+            return self.body
