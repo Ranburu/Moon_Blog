@@ -150,3 +150,25 @@ a.highlight{
     border-radius: 4px;
     margin: 10px 0;
 }
+
+.site-form input[type="text"]{
+    margin-bottom: 20px;
+}
+
+.site-form input[type="password"]{
+    margin-bottom: 20px;
+}
+
+.site-form textarea {
+    margin-bottom: 20px;
+    resize: none;
+    width: 900px;
+	height: 90px;
+	padding: 10px;
+	font-family: Ubuntu, sans-serif;
+}
+
+.create-article h2{
+    font-size: 2em;
+    text-align: center;
+}
