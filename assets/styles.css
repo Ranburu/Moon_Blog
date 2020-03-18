@@ -172,3 +172,7 @@ a.highlight{
     font-size: 2em;
     text-align: center;
 }
+
+.article p {
+    word-wrap: break-word;
+}
