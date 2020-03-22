@@ -34,3 +34,10 @@ def logout_view(request):
     if request.method == 'POST':
         logout(request)
         return redirect('articles:list')
+
+
+def account_detail(request):
+    if request.method == 'POST':  # заменить проверку на логированность пользователя
+        return render(request, 'accounts/account.html')
+    else:
+        return redirect('articles:list')
