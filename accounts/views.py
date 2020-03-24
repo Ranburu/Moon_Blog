@@ -38,6 +38,6 @@ def logout_view(request):
 
 def account_detail(request):
     if request.method == 'POST':  # заменить проверку на логированность пользователя
-        return render(request, 'accounts/account.html')
+        return render(request, 'accounts/user_profile.html')
     else:
         return redirect('articles:list')

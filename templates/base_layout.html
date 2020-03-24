@@ -20,7 +20,12 @@
                                 <button type="submit">Logout</button>
                             </form>
                         </li>
-                        <li><a href="{% url 'accounts:account' %}" class="private-account">Account</a></li>
+                        <li>
+                            <form class="private-account" action="{% url 'accounts:profile' %}" method='post'>
+                                {% csrf_token %}
+                                <button type="submit">Account</button>
+                            </form>
+                        </li>
                     {% else %}
                         <li><a href="{% url 'accounts:login' %}">Login</a></li>
                         <li><a href="{% url 'accounts:signup' %}">Signup</a></li>
