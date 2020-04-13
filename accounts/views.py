@@ -1,17 +1,22 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, logout
+from django.contrib.auth.decorators import login_required
+from . import forms
+from .forms import UserUpdateForm, ProfileUpdateForm
+from django.contrib import messages
 
 
 def signup_view(request):
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
+        form = forms.SignUpForm(request.POST)
         if form.is_valid():
             user = form.save()
             login(request, user)
+            messages.success(request, 'Your account has been created!')
             return redirect('articles:list')
     else:
-        form = UserCreationForm()
+        form = forms.SignUpForm()
     return render(request, 'accounts/signup.html', {'form': form})
 
 
@@ -36,8 +41,22 @@ def logout_view(request):
         return redirect('articles:list')
 
 
+@login_required
 def account_detail(request):
-    if request.method == 'POST':  # заменить проверку на логированность пользователя
-        return render(request, 'accounts/user_profile.html')
+    if request.method == 'POST':
+        u_form = UserUpdateForm(request.POST, instance=request.user)
+        p_form = ProfileUpdateForm(request.POST, request.FILES, instance=request.user.profile)
+        if u_form.is_valid() and p_form.is_valid():
+            p_form.save()
+            u_form.save()
+            messages.success(request, 'Your account has been updated!')
+            return redirect('accounts:profile')
     else:
-        return redirect('articles:list')
+        u_form = UserUpdateForm(instance=request.user)
+        p_form = ProfileUpdateForm(instance=request.user.profile)
+
+    context = {
+        'u_form': u_form,
+        'p_form': p_form,
+    }
+    return render(request, 'accounts/user_profile.html', context)

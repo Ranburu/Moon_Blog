@@ -25,12 +25,6 @@ a, a:hover, a:visited{
     margin: 0 auto;
 }
 
-div.wrapper > h1{
-    text-align: center;
-    margin: 100px auto;
-    font-size: 2.4em
-}
-
 header{
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -57,8 +51,8 @@ nav button{
 
 .articles{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 30px;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
 }
 
 .article{
@@ -66,6 +60,7 @@ nav button{
     border: 1px solid #FFBA1C;
     position: relative;
     padding-bottom: 40px;
+    list-style-type: none;
 }
 
 .article h2{
@@ -74,12 +69,21 @@ nav button{
 
 .article .author{
     padding: 10px;
-    background: #FFBA1C;
     position: absolute;
     right: 0;
     bottom: 0;
     margin: 0;
-    color: #0f121f;
+    color: #FFBA1C;
+}
+
+.article .date{
+    padding: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    margin: 0;
+    font-size: 0.8em;
+    color: #b6b6b6;
 }
 
 .article-detail .article{
@@ -175,4 +179,61 @@ a.highlight{
 
 .article p {
     word-wrap: break-word;
+}
+
+.wrapper li{
+    display: inline-block;
+    list-style-type: none;
+    margin-left: 20px;
+}
+
+.profile_image {
+   border-radius: 100px;
+   position: relative;
+   overflow:hidden;
+   width:200px;
+   height:200px;
+}
+
+.profile_image img {
+   position: absolute;
+   top:50%;
+   left:50%;
+   transform:translate(-50%,-50%);
+   width:200px;
+   height:200px;
+   object-fit:cover;
+}
+
+.profile_block {
+    border: 1px solid #FFBA1C;
+    padding: 20px;
+    border-radius: 4px;
+}
+
+.profile_block div{
+    display: inline-block;
+    list-style-type: none;
+}
+
+.profile_information{
+    padding-top:40px;
+    margin-left: 50px;
+    position: absolute;
+}
+
+.messages li{
+    padding: 10px;
+    list-style-type: none;
+    border: 1px solid #289c58;
+    margin: 10px 0;
+    color: #289c58
+}
+
+.messages{
+    padding: 0;
+}
+
+.article_information {
+
 }

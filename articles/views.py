@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from .models import Article
 from django.contrib.auth.decorators import login_required
 from . import forms
+from django.views.generic import ListView
 
 
 def article_list(request):
@@ -26,3 +27,10 @@ def article_create(request):
     else:
         form = forms.CreateArticle()
     return render(request, 'articles/article_create.html', {'form': form})
+
+
+class PostListView(ListView):
+    model = Article
+    template_name = 'articles/article_list'
+    context_object_name = 'articles'
+    ordering = '-date'
