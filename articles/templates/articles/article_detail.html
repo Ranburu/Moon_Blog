@@ -2,8 +2,14 @@
 {% block content %}
 <div class="article-detail">
     <div class="article">
+        {% if article.thumb.url != Null %}
         <img src="{{ article.thumb.url }}">
+        {% endif %}
         <h2>{{ article.title }}</h2>
+        {% if object.author == user %}
+            <a class="edit-button" href="{% url 'articles:edit' object.id %}">Edit</a>
+            <a class="delete-button" href="{% url 'articles:delete' object.id %}">Delete</a>
+        {% endif %}
         <p>{{ article.body }}</p>
         <p>{{ article.date }}</p>
     </div>

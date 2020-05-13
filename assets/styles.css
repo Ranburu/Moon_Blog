@@ -47,6 +47,7 @@ nav button{
     cursor: pointer;
     border: 0;
     font-size: 16px;
+    cursor: pointer;
 }
 
 .articles{
@@ -109,9 +110,9 @@ nav button{
 }
 
 .site-form {
-    margin-top: 60px;
     border: 1px solid #FFBA1C;
     padding: 20px;
+    margin-bottom: 0px;
 }
 
 .site-form input, .site-form textarea{
@@ -119,6 +120,7 @@ nav button{
     margin: 20px 0 0px 0;
     padding: 10px;
 }
+
 
 a.highlight{
     border: 1px solid #FFBA1C;
@@ -152,20 +154,28 @@ a.highlight{
     color: #fff;
     font-size: 20px;
     border-radius: 4px;
-    margin: 10px 0;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.site-form input[type="email"]{
+    margin-bottom: 20px;
+}
+
+.site-form input[type="file"]{
+    padding: 0px;
+    margin-top: 20px;
+    border: 1px solid #FFBA1C;
+    cursor: pointer;
 }
 
 .site-form input[type="text"]{
     margin-bottom: 20px;
 }
 
-.site-form input[type="password"]{
-    margin-bottom: 20px;
-}
-
 .site-form textarea {
     margin-bottom: 20px;
-    resize: none;
+    resize: vertical;
     width: 900px;
 	height: 90px;
 	padding: 10px;
@@ -193,6 +203,7 @@ a.highlight{
    overflow:hidden;
    width:200px;
    height:200px;
+   margin-bottom: 20px;
 }
 
 .profile_image img {
@@ -234,6 +245,61 @@ a.highlight{
     padding: 0;
 }
 
-.article_information {
+.edit-button {
+    background: #FFBA1C;
+    border: 0;
+    color: #fff;
+    border-radius: 4px;
+    margin: 10px;
+    padding: 10px;
+    cursor: pointer;
+}
 
+a.delete-button{
+    border: 1px solid #e61607;
+    padding: 10px;
+    border-radius: 4px;
+    color: #e61607;
+    cursor: pointer;
+}
+
+.submit-delete{
+    background: #e61607;
+    border: 0;
+    color: #fff;
+    border-radius: 4px;
+    margin: 10px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+a.cancel-delete {
+    border: 1px solid #FFBA1C;
+    padding: 10px;
+    border-radius: 4px;
+    color: #FFBA1C;
+    cursor: pointer;
+}
+
+.page_number {
+    padding: 10px;
+    margin-right: 2px;
+    border: 1px solid #FFBA1C;
+}
+
+.paginator {
+    margin-top: 20px;
+}
+
+.reset-button {
+    background: #FFBA1C;
+    border: 0;
+    color: #fff;
+    border-radius: 4px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.helptext {
+    display:none;
 }

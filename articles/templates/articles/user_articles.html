@@ -8,8 +8,9 @@
         </ul>
     {% endif %}
 <div class="articles">
+    <h1>{{ view.kwargs.username }}</h1>
     {% for article in articles %}
-    <div class="article">
+        <div class="article">
         <a href="{% url 'articles:detail' article.id %}">
             <div class="article_information">
                 <h1>{{ article.title }}</h1>
